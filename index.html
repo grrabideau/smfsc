@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-24">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sierra Madre Fire Safe Council | Wildfire Resilient Community</title>
+  <meta name="description" content="Dedicated to reducing wildfire risk and enhancing public safety in Sierra Madre, CA through education, defensible space, and community action." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              50: '#f2f7f4',
+              100: '#e1ede6',
+              600: '#2b5e46',
+              700: '#204a36',
+              800: '#1a3c2c',
+              900: '#142f22',
+            },
+            amberfire: {
+              500: '#e66a20',
+              600: '#c85310',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans antialiased selection:bg-amber-100 selection:text-amberfire-600">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-forest-900 text-stone-200 text-xs sm:text-sm py-2 px-4 border-b border-forest-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-amberfire-500 animate-pulse"></span>
+        <span><strong>Fall 2026 Speaker Series:</strong> Free practical guides to defensible space, home hardening & insurance.</span>
+      </div>
+      <a href="#speaker-series" class="underline hover:text-white transition">View Series Dates &rarr;</a>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo / Branding -->
+        <a href="#" class="flex items-center gap-3 group">
+          <img src="images/SMFSC-Horizontal-Full-color.png" alt="Sierra Madre Fire Safe Council" class="h-14 w-auto">
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-stone-700">
+          <a href="#about" class="hover:text-forest-700 transition">About</a>
+          
+          <!-- Dropdown: Get Prepared -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-forest-700 transition py-2">
+              <span>Get Prepared</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-stone-400 transition duration-200"></i>
+            </button>
+            <div class="absolute left-0 top-full w-64 bg-white rounded-xl shadow-xl border border-stone-100 py-2 hidden group-hover:block group-focus-within:block z-50">
+              <a href="#preparedness" class="block px-4 py-2 hover:bg-forest-50 hover:text-forest-800">Preparedness Overview</a>
+              <a href="#ready-set-go" class="block px-4 py-2 hover:bg-forest-50 hover:text-forest-800">Ready, Set, Go! Framework</a>
+              <a href="#assessments" class="block px-4 py-2 hover:bg-forest-50 hover:text-forest-800">Home Assessments</a>
+              <button onclick="openModal('emergencyPlanModal')" class="w-full text-left px-4 py-2 hover:bg-forest-50 hover:text-forest-800">Build an Emergency Plan</button>
+              <a href="#get-notified" class="block px-4 py-2 hover:bg-forest-50 hover:text-forest-800">Emergency Alerts & Radio</a>
+            </div>
+          </div>
+
+          <!-- Dropdown: Programs & Events -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-forest-700 transition py-2">
+              <span>Programs & Events</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-stone-400 transition duration-200"></i>
+            </button>
+            <div class="absolute left-0 top-full w-64 bg-white rounded-xl shadow-xl border border-stone-100 py-2 hidden group-hover:block group-focus-within:block z-50">
+              <a href="#chipper-days" class="block px-4 py-2 hover:bg-forest-50 hover:text-forest-800">Chipper Days</a>
+              <a href="#block-captains" class="block px-4 py-2 hover:bg-forest-50 hover:text-forest-800">Block Captains Program</a>
+              <a href="#speaker-series" class="block px-4 py-2 hover:bg-forest-50 hover:text-forest-800">2026 Fall Speaker Series</a>
+              <a href="#events" class="block px-4 py-2 hover:bg-forest-50 hover:text-forest-800">All Events & Commemorations</a>
+              <a href="#projects" class="block px-4 py-2 hover:bg-forest-50 hover:text-forest-800">Council Projects</a>
+            </div>
+          </div>
+
+          <a href="#get-involved" class="hover:text-forest-700 transition">Get Involved</a>
+          <a href="#resources" class="hover:text-forest-700 transition">Resources</a>
+          
+          <a href="#donate" class="bg-amberfire-500 hover:bg-amberfire-600 text-white font-semibold px-4 py-2 rounded-full transition shadow-sm hover:shadow">
+            Donate
+          </a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-stone-600 hover:text-stone-900 hover:bg-stone-100 focus:outline-none" aria-label="Toggle Navigation">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-stone-200 bg-white px-4 pt-3 pb-6 space-y-3">
+      <a href="#about" class="mobile-link block text-base font-medium text-stone-800 hover:text-forest-700">About</a>
+      <div class="border-t border-stone-100 pt-2 pb-1">
+        <p class="text-xs uppercase font-bold text-stone-400 tracking-wider mb-2">Get Prepared</p>
+        <div class="space-y-2 pl-3">
+          <a href="#preparedness" class="mobile-link block text-sm text-stone-700">Preparedness Overview</a>
+          <a href="#ready-set-go" class="mobile-link block text-sm text-stone-700">Ready, Set, Go! Framework</a>
+          <a href="#assessments" class="mobile-link block text-sm text-stone-700">Property Assessments</a>
+          <button onclick="openModal('emergencyPlanModal')" class="mobile-link block text-sm text-stone-700">Build an Emergency Plan</button>
+          <a href="#get-notified" class="mobile-link block text-sm text-stone-700">Emergency Alerts & Radio</a>
+        </div>
+      </div>
+      <div class="border-t border-stone-100 pt-2 pb-1">
+        <p class="text-xs uppercase font-bold text-stone-400 tracking-wider mb-2">Programs & Events</p>
+        <div class="space-y-2 pl-3">
+          <a href="#chipper-days" class="mobile-link block text-sm text-stone-700">Chipper Days</a>
+          <a href="#block-captains" class="mobile-link block text-sm text-stone-700">Block Captains</a>
+          <a href="#speaker-series" class="mobile-link block text-sm text-stone-700">2026 Speaker Series</a>
+          <a href="#events" class="mobile-link block text-sm text-stone-700">Events & Commemorations</a>
+          <a href="#projects" class="mobile-link block text-sm text-stone-700">Projects</a>
+        </div>
+      </div>
+      <a href="#get-involved" class="mobile-link block text-base font-medium text-stone-800">Get Involved</a>
+      <a href="#resources" class="mobile-link block text-base font-medium text-stone-800">Resources</a>
+      <a href="#donate" class="mobile-link block text-center bg-amberfire-500 text-white font-medium py-2.5 rounded-lg shadow-sm">Donate</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative bg-forest-900 text-white py-20 md:py-28 overflow-hidden bg-cover bg-center" style="background-image: url('images/sierra-madre-crop.jpg');">
+    <div class="absolute inset-0 bg-forest-900/70"></div>
+    <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#e66a20_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <div class="relative max-w-5xl mx-auto px-4 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-forest-800 border border-forest-700 text-amber-300 text-xs font-semibold uppercase tracking-wider mb-6">
+        <i data-lucide="flame" class="w-4 h-4"></i> Wildland Urban Interface Resilience
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight font-serif text-stone-50 leading-tight mb-6">
+        Helping Make Sierra Madre a <br class="hidden sm:inline" />
+        <span class="text-amber-400">Wildfire Resilient</span> Community
+      </h1>
+      <p class="text-lg sm:text-xl text-stone-300 max-w-3xl mx-auto leading-relaxed mb-10">
+        Dedicated to reducing wildfire risk and fostering collective community resilience in our foothills through defensible space, proactive home hardening, education, and mutual support.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#ready-set-go" class="bg-amberfire-500 hover:bg-amberfire-600 text-white font-semibold px-7 py-3.5 rounded-lg transition duration-150 shadow-lg hover:shadow-xl flex items-center gap-2">
+          <span>Ready, Set, Go! Guide</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="#assessments" class="bg-forest-800/80 hover:bg-forest-800 text-stone-100 border border-forest-700 font-semibold px-7 py-3.5 rounded-lg transition duration-150">
+          Request Free Assessment
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS LOGO STRIP -->
+  <section class="bg-stone-100 py-8 border-y border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <p class="text-center text-xs font-bold uppercase tracking-widest text-stone-500 mb-6">In Collaborative Partnership With</p>
+      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-80 text-stone-600 font-medium text-sm">
+        <a href="https://www.sierramadreca.gov/" target="_blank" rel="noopener" class="hover:text-forest-700 transition flex items-center gap-2">
+          <img src="images/Seal_of_Sierra_Madre.png" alt="" class="h-8 w-auto"> City of Sierra Madre
+        </a>
+        <a href="https://www.sierramadreca.gov/safety-resilience/fire-department/" target="_blank" rel="noopener" class="hover:text-forest-700 transition flex items-center gap-2">
+          <img src="images/SMFD.gif" alt="" class="h-8 w-auto"> Sierra Madre Fire Dept
+        </a>
+        <a href="https://cafiresafecouncil.org/" target="_blank" rel="noopener" class="hover:text-forest-700 transition flex items-center gap-2">
+          <img src="images/CFSC-Horizontal-Full-color.png" alt="" class="h-8 w-auto"> California Fire Safe Council
+        </a>
+        <a href="https://fire.ca.gov" target="_blank" rel="noopener" class="hover:text-forest-700 transition flex items-center gap-2">
+          <img src="images/CAL-FIRE.png" alt="" class="h-8 w-auto"> CAL FIRE
+        </a>
+        <a href="https://sgvmwd.com" target="_blank" rel="noopener" class="hover:text-forest-700 transition flex items-center gap-2">
+          <img src="images/SGVMWD_Website20_Homepage_header-logo.png" alt="" class="h-8 w-auto"> SGV Municipal Water District
+        </a>
+        <a href="https://www.sierramadreemergency.org" target="_blank" rel="noopener" class="hover:text-forest-700 transition flex items-center gap-2">
+          <img src="images/cert_logo_001.png" alt="" class="h-8 w-auto"> Sierra Madre CERT
+        </a>
+        <a href="https://www.coreresponse.org/fire-safe-foothills/" target="_blank" rel="noopener" class="hover:text-forest-700 transition flex items-center gap-2">
+          <img src="images/core.png" alt="" class="h-8 w-auto"> CORE Fire Safe Foothills
+        </a>
+        <a href="https://www.cafirefoundation.org" target="_blank" rel="noopener" class="hover:text-forest-700 transition flex items-center gap-2">
+          <img src="images/cal-fire-found.png" alt="" class="h-8 w-auto"> California Fire Foundation
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-16 md:py-24 max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-stone-200">
+      <span class="text-xs font-bold text-amberfire-600 uppercase tracking-widest block mb-2">About Our Organization</span>
+      <h2 class="text-3xl font-extrabold text-forest-900 tracking-tight font-serif mb-6">Dedicated to Foothill Public Safety</h2>
+      <p class="text-base sm:text-lg text-stone-700 leading-relaxed mb-6">
+        The Sierra Madre Fire Safe Council (SMFSC) is a community-based, nonprofit organization dedicated to reducing wildfire risk and enhancing public safety in the foothill areas of Sierra Madre, California.
+      </p>
+      <p class="text-base sm:text-lg text-stone-700 leading-relaxed mb-6">
+        Through education, outreach, and partnerships with local government agencies and neighborhood groups, the SMFSC works to help residents adopt fire-resilient practices such as defensible space, home hardening, and fuel reduction. By fostering community awareness and collective action, it aims to protect lives, property, and the natural landscape from wildfire threats.
+      </p>
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-stone-50 rounded-xl border border-stone-200 gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-forest-100 text-forest-700 flex items-center justify-center font-bold">
+            <i data-lucide="check-circle" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <p class="text-sm font-bold text-forest-900">501(c)(3) Charitable Trust Status</p>
+            <p class="text-xs text-stone-600">All contributions directly support local resilience initiatives.</p>
+          </div>
+        </div>
+        <a href="mailto:info@sierramadrefiresafe.org" class="text-sm font-semibold text-forest-700 hover:text-forest-900 underline flex items-center gap-1">
+          <span>info@sierramadrefiresafe.org</span>
+          <i data-lucide="mail" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET PREPARED OVERVIEW -->
+  <section id="preparedness" class="py-16 bg-stone-100 border-t border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold text-amberfire-600 uppercase tracking-widest block mb-2">Wildfire Preparedness</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-900 tracking-tight font-serif">Make Your Property Fire Resilient</h2>
+        <p class="mt-4 text-stone-600 text-lg">
+          Wildfires in hillside environments spread rapidly via wind-driven embers. Preparation begins well before a fire starts.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl p-7 shadow-sm border border-stone-200 hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amberfire-600 flex items-center justify-center mb-6">
+            <i data-lucide="scissors" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-stone-900 mb-3">Clearing Brush & Vegetation</h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-4">
+            Eliminate dead and overgrown vegetation around your perimeter to starve potential fire fronts of dry fuel.
+          </p>
+          <a href="#chipper-days" class="text-sm font-semibold text-amberfire-600 hover:text-amberfire-700 inline-flex items-center gap-1">
+            Free Chipper Days Program &rarr;
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl p-7 shadow-sm border border-stone-200 hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-xl bg-forest-100 text-forest-700 flex items-center justify-center mb-6">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-stone-900 mb-3">Defensible Space Zones</h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-4">
+            Structure your garden into Zone 0 (0-5 ft non-combustible), Zone 1 (5-30 ft lean & green), and Zone 2 (30-100 ft fuel reduction).
+          </p>
+          <a href="#assessments" class="text-sm font-semibold text-forest-700 hover:text-forest-800 inline-flex items-center gap-1">
+            Get an Assessment &rarr;
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl p-7 shadow-sm border border-stone-200 hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-xl bg-stone-200 text-stone-800 flex items-center justify-center mb-6">
+            <i data-lucide="home" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-stone-900 mb-3">Home Hardening</h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-4">
+            Protect structural vulnerability points against embers using 1/8-inch ember-resistant vents, boxed eaves, and fire-safe roofing.
+          </p>
+          <a href="#speaker-series" class="text-sm font-semibold text-stone-800 hover:text-black inline-flex items-center gap-1">
+            Attend Expert Lectures &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- NFPA Home Ignition Zone Banner -->
+      <div class="mt-12 bg-forest-800 text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
+        <div class="space-y-2 text-center md:text-left">
+          <div class="inline-flex items-center gap-1 text-xs font-bold text-amber-300 uppercase tracking-widest">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i> NFPA Guidelines
+          </div>
+          <h4 class="text-xl font-bold font-serif">Understanding the Home Ignition Zone (HIZ)</h4>
+          <p class="text-stone-300 text-sm max-w-2xl">
+            Learn comprehensive wildfire home defense principles from the National Fire Protection Association.
+          </p>
+        </div>
+        <a href="https://www.nfpa.org/education-and-research/wildfire/preparing-homes-for-wildfire" target="_blank" rel="noopener" class="whitespace-nowrap px-6 py-3 bg-white text-forest-900 font-bold text-sm rounded-lg hover:bg-stone-100 transition shadow">
+          Explore NFPA Guide &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- READY, SET, GO! FRAMEWORK -->
+  <section id="ready-set-go" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-xs font-bold text-amberfire-600 uppercase tracking-widest block mb-2">Wildfire Action Framework</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-900 tracking-tight font-serif">Ready, Set, Go!</h2>
+      <p class="mt-4 text-stone-600 text-lg">
+        Living in Sierra Madre’s Wildland Urban Interface means preparing well ahead of fire weather, staying alert, and acting without hesitation.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- READY -->
+      <div class="bg-white rounded-2xl border-t-4 border-sky-600 shadow-sm p-7 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-8 h-8 rounded-full bg-sky-100 text-sky-700 font-extrabold flex items-center justify-center text-sm">1</span>
+            <h3 class="text-2xl font-bold text-stone-900">Get Ready</h3>
+          </div>
+          <p class="text-stone-600 text-sm mb-6">Prepare your property long before a fire starts by creating a buffer.</p>
+          <ul class="space-y-3 text-sm text-stone-700 mb-6">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+              <span>Create Defensible Space (Zones 1 & 2)</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+              <span>Clean gutters and roof of dry pine needles and debris</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+              <span>Install ember-resistant 1/8" metal mesh vents</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+              <span>Choose fire-smart, high-moisture landscaping</span>
+            </li>
+          </ul>
+        </div>
+        <a href="#assessments" class="text-xs font-bold text-sky-700 hover:text-sky-900 uppercase tracking-wider">Book property inspection &rarr;</a>
+      </div>
+
+      <!-- SET -->
+      <div class="bg-white rounded-2xl border-t-4 border-amber-500 shadow-sm p-7 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 font-extrabold flex items-center justify-center text-sm">2</span>
+            <h3 class="text-2xl font-bold text-stone-900">Get Set</h3>
+          </div>
+          <p class="text-stone-600 text-sm mb-6">Assemble your emergency supplies and build a family action plan.</p>
+          <ul class="space-y-3 text-sm text-stone-700 mb-6">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+              <span>Build an Emergency "Go Bag" for each family member</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+              <span>Establish multiple vehicular and pedestrian escape routes</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+              <span>Designate a safe out-of-area family meeting spot</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+              <span>Prepare an animal evacuation plan and pet crates</span>
+            </li>
+          </ul>
+        </div>
+        <button onclick="openModal('emergencyPlanModal')" class="text-left text-xs font-bold text-amber-700 hover:text-amber-900 uppercase tracking-wider">Full Supply Checklist &rarr;</button>
+      </div>
+
+      <!-- GO -->
+      <div class="bg-white rounded-2xl border-t-4 border-red-600 shadow-sm p-7 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-8 h-8 rounded-full bg-red-100 text-red-700 font-extrabold flex items-center justify-center text-sm">3</span>
+            <h3 class="text-2xl font-bold text-stone-900">Go!</h3>
+          </div>
+          <p class="text-stone-600 text-sm mb-6">Act early when wildfire strikes. Do not wait for a mandatory order.</p>
+          <ul class="space-y-3 text-sm text-stone-700 mb-6">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+              <span>Leave early to prevent road gridlock for emergency apparatus</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+              <span>Dress in protective cotton/wool layers, boots, and N95 mask</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+              <span>Shut off gas at the primary meter if safe to do so</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+              <span>Leave exterior gates unlocked for first responders</span>
+            </li>
+          </ul>
+        </div>
+        <a href="#get-notified" class="text-xs font-bold text-red-700 hover:text-red-900 uppercase tracking-wider">Configure emergency alerts &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASSESSMENTS SECTION -->
+  <section id="assessments" class="py-16 bg-forest-50 border-y border-stone-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-stone-200 flex flex-col md:flex-row items-center gap-8">
+        <div class="w-16 h-16 rounded-2xl bg-forest-100 text-forest-700 flex items-center justify-center flex-shrink-0">
+          <i data-lucide="clipboard-check" class="w-8 h-8"></i>
+        </div>
+        <div class="flex-grow space-y-3 text-center md:text-left">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-forest-900 font-serif">Property Wildfire Risk Assessments</h2>
+          <p class="text-stone-600 leading-relaxed text-sm sm:text-base">
+            Not sure if you have sufficient defensible space around your home? Wondering what modifications can make your structure more resistant to embers? Free on-site property assessments are available to Sierra Madre homeowners.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-4 justify-center md:justify-start">
+            <a href="https://www.wildfirela.org/wildfire-home-assessment/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 bg-forest-700 hover:bg-forest-800 text-white font-semibold text-sm rounded-lg transition shadow-sm">
+              <span>Book via LA Regional FSC & MySafeLA</span>
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+            <a href="mailto:assessments@sierramadrefiresafe.org" class="inline-flex items-center gap-2 px-5 py-2.5 border border-forest-600 text-forest-700 hover:bg-forest-50 font-semibold text-sm rounded-lg transition">
+              <span>Contact SMFSC Assessment Team</span>
+              <i data-lucide="mail" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2026 SPEAKER SERIES SECTION -->
+  <section id="speaker-series" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amberfire-600 text-xs font-bold uppercase tracking-wider mb-3">
+        <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Fall 2026 Curriculum
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-900 tracking-tight font-serif">Wildfire Preparedness & Resilience Speaker Series</h2>
+      <p class="mt-4 text-stone-600 text-base sm:text-lg">
+        Join the Sierra Madre Fire Safe Council for an informative three-part series designed to give residents practical, actionable knowledge to protect homes, enhance neighborhood safety, and navigate the shifting fire insurance landscape.
+      </p>
+    </div>
+
+    <div class="space-y-6 max-w-4xl mx-auto">
+      <!-- Part 1 -->
+      <div class="bg-white rounded-2xl border border-stone-200 p-6 sm:p-8 shadow-sm hover:border-amberfire-500/50 transition">
+        <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 border-b border-stone-100 pb-4 mb-4">
+          <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-forest-100 text-forest-800 self-start">Part 1</span>
+          <span class="text-sm font-semibold text-stone-500 flex items-center gap-1.5">
+            <i data-lucide="clock" class="w-4 h-4"></i> Tuesday, October 20, 2026 &bull; 6:30 PM
+          </span>
+        </div>
+        <h3 class="text-xl sm:text-2xl font-bold text-stone-900 mb-2">Defensible Space & Fire-Resilient Landscaping</h3>
+        <p class="text-sm font-semibold text-amberfire-600 mb-3">Featured Speakers: JT (FORM LA Landscaping) &amp; CAL FIRE Representative</p>
+        <p class="text-stone-600 text-sm leading-relaxed mb-4">
+          Kick off the series with an essential guide to perimeter safety. Learn how strategic landscaping, smart native plant selections, and proper buffer management create a defensible barrier that reduces ignition risk while preserving local garden ecology.
+        </p>
+        <p class="text-xs font-semibold text-stone-500 flex items-center gap-1">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Sierra Madre City Council Chambers, 232 W. Sierra Madre Blvd.
+        </p>
+      </div>
+
+      <!-- Part 2 -->
+      <div class="bg-white rounded-2xl border border-stone-200 p-6 sm:p-8 shadow-sm hover:border-amberfire-500/50 transition">
+        <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 border-b border-stone-100 pb-4 mb-4">
+          <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-forest-100 text-forest-800 self-start">Part 2</span>
+          <span class="text-sm font-semibold text-stone-500 flex items-center gap-1.5">
+            <i data-lucide="clock" class="w-4 h-4"></i> Tuesday, November 17, 2026 &bull; 6:30 PM
+          </span>
+        </div>
+        <h3 class="text-xl sm:text-2xl font-bold text-stone-900 mb-2">Home Hardening & Vulnerability Mitigation</h3>
+        <p class="text-sm font-semibold text-amberfire-600 mb-3">Featured Speaker: Rich Snyder, Home Hardening Expert</p>
+        <p class="text-stone-600 text-sm leading-relaxed mb-4">
+          Most structures ignite from wind-blown embers rather than direct flame contact. Rich Snyder breaks down practical, cost-effective retrofits—including ember-resistant venting, roof and siding materials, and deck modifications—to fortify your home against radiant heat and ember storms.
+        </p>
+        <p class="text-xs font-semibold text-stone-500 flex items-center gap-1">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Sierra Madre City Council Chambers, 232 W. Sierra Madre Blvd.
+        </p>
+      </div>
+
+      <!-- Part 3 -->
+      <div class="bg-white rounded-2xl border border-stone-200 p-6 sm:p-8 shadow-sm hover:border-amberfire-500/50 transition">
+        <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 border-b border-stone-100 pb-4 mb-4">
+          <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-forest-100 text-forest-800 self-start">Part 3</span>
+          <span class="text-sm font-semibold text-stone-500 flex items-center gap-1.5">
+            <i data-lucide="clock" class="w-4 h-4"></i> Monday, December 14, 2026 &bull; 6:30 PM
+          </span>
+        </div>
+        <h3 class="text-xl sm:text-2xl font-bold text-stone-900 mb-2">Navigating the California Homeowner Fire Insurance Environment</h3>
+        <p class="text-sm font-semibold text-amberfire-600 mb-3">Featured Speaker: Dana Dattola, Weaver &amp; Associates Insurance (Arcadia)</p>
+        <p class="text-stone-600 text-sm leading-relaxed mb-4">
+          Securing and maintaining affordable fire insurance is one of the most critical challenges facing hillside and foothill homeowners today. Dana Dattola provides an expert perspective on current market trends, policy renewals, the California FAIR Plan, and how documented mitigation efforts affect insurability.
+        </p>
+        <p class="text-xs font-semibold text-stone-500 flex items-center gap-1">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Sierra Madre City Council Chambers, 232 W. Sierra Madre Blvd.
+        </p>
+      </div>
+    </div>
+
+    <!-- Grant & Free Admission Note -->
+    <div class="mt-10 p-6 max-w-4xl mx-auto rounded-xl bg-stone-100 border border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <p class="text-sm font-bold text-forest-900">All sessions are free and open to the community.</p>
+        <p class="text-xs text-stone-600">Funded by a generous grant from the <strong>California Fire Foundation</strong>.</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://instagram.com/sierramadrefiresafe" target="_blank" rel="noopener" class="text-xs font-semibold text-stone-700 hover:text-black flex items-center gap-1">
+          <i data-lucide="instagram" class="w-4 h-4"></i> @sierramadrefiresafe
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHIPPER DAYS & BLOCK CAPTAINS GRID -->
+  <section class="py-16 bg-stone-100 border-t border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8">
+        
+        <!-- CHIPPER DAYS -->
+        <div id="chipper-days" class="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-stone-200 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-6">
+              <i data-lucide="truck" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-forest-900 font-serif mb-4">Chipper Days</h3>
+            <p class="text-stone-700 leading-relaxed text-sm sm:text-base mb-6">
+              Designed to help residents make their homes more fire-safe, this is a <strong>FREE service</strong> offered by SMFSC on specific dates throughout the year. On the day before the event, simply move your cut vegetation to the curb and SMFSC will take care of the rest — your debris will be professionally chipped and hauled away at no cost to you.
+            </p>
+            <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-200 mb-6">
+              <p class="text-sm font-bold text-emerald-900 mb-1">Stay Notified for the Next Event</p>
+              <p class="text-xs text-emerald-700 mb-3">Sign up on our interest roster to receive curbside pickup notices and instructions.</p>
+              <a href="https://forms.gle/VBeMR586BDugSL1S8" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 px-4 py-2 rounded-lg transition shadow-sm">
+                <span>Chipper Day Sign-Up Form</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+          <div class="border-t border-stone-100 pt-4 text-xs text-stone-500">
+            <strong>Previous Community Partners:</strong> San Gabriel Valley Municipal Water District, Rotary Club of Sierra Madre, and H&amp;E Tree Service.
+          </div>
+        </div>
+
+        <!-- BLOCK CAPTAINS -->
+        <div id="block-captains" class="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-stone-200 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amberfire-600 flex items-center justify-center mb-6">
+              <i data-lucide="users-round" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-forest-900 font-serif mb-4">Block Captains Program</h3>
+            <p class="text-stone-700 leading-relaxed text-sm sm:text-base mb-6">
+              Block Captains are the local link between the Sierra Madre Fire Safe Council (SMFSC) and their immediate neighborhood. It’s a simple volunteer role that helps keep our community informed, prepared, and connected in the face of wildfire risk. Responsibilities include sharing fire preparedness tips, helping neighbors stay updated on safety projects, and assisting with occasional outreach (like distributing flyers or collecting input).
+            </p>
+            <div class="p-4 bg-amber-50 rounded-xl border border-amber-200 mb-6">
+              <p class="text-sm font-bold text-amber-900 mb-1">Become a Block Captain</p>
+              <p class="text-xs text-amber-800 mb-3">No special training is needed — just a willingness to help your block stay fire-ready.</p>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSenMQiJ3g9OsfI7-OTL9ut0gc4unHE-n7ryycZH6H5Awz_YMQ/viewform?usp=sharing" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-bold text-white bg-amberfire-500 hover:bg-amberfire-600 px-4 py-2 rounded-lg transition shadow-sm">
+                <span>Block Captain Request Form</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+          <div class="border-t border-stone-100 pt-4 text-xs text-stone-500">
+            Supported by a dedicated grant from the <strong>California Fire Foundation</strong>.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EMERGENCY ALERTS & NOTIFICATIONS -->
+  <section id="get-notified" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-xs font-bold text-amberfire-600 uppercase tracking-widest block mb-2">Immediate Alerts</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-900 tracking-tight font-serif">Get Notified: Emergency Communications</h2>
+      <p class="mt-4 text-stone-600 text-base sm:text-lg">
+        During an emergency, communication channels can change rapidly. Register for local zone-based platforms and keep emergency radio frequencies accessible.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Genasys Protect -->
+      <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow transition flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 text-forest-700 font-bold mb-2">
+            <i data-lucide="map-pinned" class="w-5 h-5"></i>
+            <h4>Genasys Protect</h4>
+          </div>
+          <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">
+            Zone-based mobile application alerting residents to local incidents, threat levels, and neighborhood-specific evacuation instructions.
+          </p>
+        </div>
+        <a href="https://protect.genasys.com/search" target="_blank" rel="noopener" class="text-xs font-bold text-forest-700 hover:text-forest-900 inline-flex items-center gap-1">
+          Open Incident Map &rarr;
+        </a>
+      </div>
+
+      <!-- Smart911 -->
+      <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow transition flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 text-forest-700 font-bold mb-2">
+            <i data-lucide="phone-call" class="w-5 h-5"></i>
+            <h4>Smart911 Alerts</h4>
+          </div>
+          <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">
+            Direct public safety alert system providing real-time emergency hazard notifications straight to your phone.
+          </p>
+        </div>
+        <a href="https://www.smart911.com/smart911/ref/reg.action?pa=cityofsierramadre" target="_blank" rel="noopener" class="text-xs font-bold text-forest-700 hover:text-forest-900 inline-flex items-center gap-1">
+          Register with City Portal &rarr;
+        </a>
+      </div>
+
+      <!-- Nixle Alerts -->
+      <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow transition flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 text-forest-700 font-bold mb-2">
+            <i data-lucide="bell-ring" class="w-5 h-5"></i>
+            <h4>Nixle Alerts</h4>
+          </div>
+          <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">
+            Stay connected to the Sierra Madre Police Department and local emergency personnel via SMS and email warnings.
+          </p>
+        </div>
+        <a href="https://local.nixle.com/signup/widget/m/1134" target="_blank" rel="noopener" class="text-xs font-bold text-forest-700 hover:text-forest-900 inline-flex items-center gap-1">
+          Sign up for Nixle &rarr;
+        </a>
+      </div>
+
+      <!-- City eBlast -->
+      <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow transition flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 text-forest-700 font-bold mb-2">
+            <i data-lucide="mail-warning" class="w-5 h-5"></i>
+            <h4>Sierra Madre eBlast</h4>
+          </div>
+          <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">
+            Official municipal notifications and civil directives issued by the City of Sierra Madre throughout crisis situations.
+          </p>
+        </div>
+        <a href="https://www.sierramadreca.gov/safety-resilience/emergency-and-safety-hub/" target="_blank" rel="noopener" class="text-xs font-bold text-forest-700 hover:text-forest-900 inline-flex items-center gap-1">
+          City Safety Hub &rarr;
+        </a>
+      </div>
+
+      <!-- AM Radio 1630 -->
+      <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow transition flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 text-forest-700 font-bold mb-2">
+            <i data-lucide="radio" class="w-5 h-5"></i>
+            <h4>AM Radio 1630</h4>
+          </div>
+          <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">
+            Broadcasts vital public safety instructions when power or cellular towers fail. Keep battery-operated or hand-crank radios tuned to 1630 AM.
+          </p>
+        </div>
+        <span class="text-xs font-semibold text-stone-400">Emergency Broadcast Frequency</span>
+      </div>
+
+      <!-- Sierra Madre CERT -->
+      <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow transition flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 text-forest-700 font-bold mb-2">
+            <i data-lucide="life-buoy" class="w-5 h-5"></i>
+            <h4>Sierra Madre CERT</h4>
+          </div>
+          <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">
+            Community Emergency Response Team training and volunteer corps serving the local foothill radius.
+          </p>
+        </div>
+        <a href="https://www.sierramadreemergency.org/" target="_blank" rel="noopener" class="text-xs font-bold text-forest-700 hover:text-forest-900 inline-flex items-center gap-1">
+          Visit CERT Site &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET INVOLVED & PROJECTS SECTION -->
+  <section id="get-involved" class="py-16 bg-stone-100 border-t border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <!-- Get Involved Information -->
+        <div class="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-stone-200">
+          <span class="text-xs font-bold text-amberfire-600 uppercase tracking-widest block mb-2">Civic Engagement</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-forest-900 font-serif mb-4">Ways to Get Involved</h2>
+          <p class="text-stone-700 text-sm sm:text-base leading-relaxed mb-6">
+            The formula for ensuring a safer homeland consists of volunteers, a trained and informed public, and increased support of emergency response agencies during disasters.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-forest-100 text-forest-700 flex items-center justify-center flex-shrink-0 mt-1">
+                <i data-lucide="flag" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-stone-900 text-base">Become a Block Captain</h4>
+                <p class="text-stone-600 text-xs sm:text-sm mt-1">Act as the information conduit for your immediate neighbors. <a href="#block-captains" class="underline font-semibold text-forest-700">Join the roster</a>.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-amber-100 text-amberfire-600 flex items-center justify-center flex-shrink-0 mt-1">
+                <i data-lucide="flame" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-stone-900 text-base">Start a Firewise USA® Site</h4>
+                <p class="text-stone-600 text-xs sm:text-sm mt-1">Organize with adjacent neighbors to keep your immediate hill pocket defensible. Learn how on the <a href="https://nfpa.org/firewise" target="_blank" rel="noopener" class="underline font-semibold text-amberfire-600">NFPA Firewise Portal</a>.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-sky-100 text-sky-700 flex items-center justify-center flex-shrink-0 mt-1">
+                <i data-lucide="shield-plus" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-stone-900 text-base">Join CERT</h4>
+                <p class="text-stone-600 text-xs sm:text-sm mt-1">Acquire real search, rescue, and first aid triage credentials through Sierra Madre CERT. <a href="http://www.sierramadreemergency.org/" target="_blank" rel="noopener" class="underline font-semibold text-sky-700">Enroll today</a>.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-stone-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs sm:text-sm text-stone-600">
+            <span>Volunteer questions or direct assistance:</span>
+            <a href="mailto:info@sierramadrefiresafe.org" class="font-bold text-forest-700 hover:text-forest-900 underline">info@sierramadrefiresafe.org</a>
+          </div>
+        </div>
+
+        <!-- Projects & Funding -->
+        <div id="projects" class="bg-forest-900 text-white rounded-2xl p-8 sm:p-10 shadow-sm border border-forest-800 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">Targeted Allocation</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-50 font-serif mb-4">Council Projects</h2>
+            <p class="text-stone-300 text-sm sm:text-base leading-relaxed mb-6">
+              The SMFSC is actively working to acquire funding for citywide projects through state and federal grants, as well as private donations. Funds are allocated where risk mitigation is most critical:
+            </p>
+
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center gap-3">
+                <div class="w-7 h-7 rounded-full bg-forest-800 text-amber-400 flex items-center justify-center text-xs font-bold">1</div>
+                <span class="text-stone-200 text-sm font-medium">Curbside vegetation management & brush clearance</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-7 h-7 rounded-full bg-forest-800 text-amber-400 flex items-center justify-center text-xs font-bold">2</div>
+                <span class="text-stone-200 text-sm font-medium">Independent property risk evaluations for homeowners</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-7 h-7 rounded-full bg-forest-800 text-amber-400 flex items-center justify-center text-xs font-bold">3</div>
+                <span class="text-stone-200 text-sm font-medium">Community workshops, speaker series, and school outreach</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="p-5 bg-forest-800/80 rounded-xl border border-forest-700">
+            <p class="text-sm text-stone-200 mb-3">Community support keeps these programs active across the hillsides.</p>
+            <div class="flex gap-3">
+              <a href="#donate" class="text-xs font-bold bg-amberfire-500 hover:bg-amberfire-600 text-white px-4 py-2.5 rounded-lg transition shadow">Contribute Financially</a>
+              <a href="mailto:info@sierramadrefiresafe.org" class="text-xs font-semibold text-stone-300 hover:text-white px-4 py-2.5 rounded-lg border border-forest-600 transition">Volunteer Time</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ALL EVENTS & COMMEMORATIONS -->
+  <section id="events" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-xs font-bold text-amberfire-600 uppercase tracking-widest block mb-2">Community Calendar</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-900 tracking-tight font-serif">Events & Commemorations</h2>
+      <p class="mt-4 text-stone-600 text-base sm:text-lg">
+        Review upcoming council activities and historical wildfire milestone events in the San Gabriel foothills.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <!-- Upcoming Card -->
+      <div class="bg-white rounded-2xl p-7 border border-stone-200 shadow-sm">
+        <h3 class="text-xl font-bold text-forest-900 mb-4 flex items-center gap-2">
+          <i data-lucide="calendar-days" class="w-5 h-5 text-amberfire-600"></i> Upcoming Events
+        </h3>
+        <div class="border-l-2 border-amberfire-500 pl-4 py-1">
+          <h4 class="font-bold text-stone-900 text-base">Wildfire Preparedness Speaker Series</h4>
+          <p class="text-xs text-stone-500 font-semibold mb-2">Fall 2026 &bull; City Council Chambers</p>
+          <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-3">
+            Three sessions covering defensible space, structural home hardening against wind-blown embers, and navigating property insurance.
+          </p>
+          <a href="#speaker-series" class="text-xs font-bold text-amberfire-600 hover:underline">Full Schedule Details &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Past Events Card -->
+      <div class="bg-white rounded-2xl p-7 border border-stone-200 shadow-sm">
+        <h3 class="text-xl font-bold text-forest-900 mb-4 flex items-center gap-2">
+          <i data-lucide="history" class="w-5 h-5 text-stone-500"></i> Past Events & Observances
+        </h3>
+        <ul class="space-y-4">
+          <li class="border-l-2 border-stone-300 pl-4 py-1">
+            <h4 class="font-bold text-stone-900 text-sm">Fire Prevention Festival (SMFD)</h4>
+            <p class="text-xs text-stone-500 mb-1">October 10, 2026 &bull; 242 W. Sierra Madre Blvd.</p>
+            <a href="https://www.instagram.com/sierramadrefiresafe" target="_blank" rel="noopener" class="text-xs text-stone-600 hover:underline">View Festival Highlights &rarr;</a>
+          </li>
+          <li class="border-l-2 border-stone-300 pl-4 py-1">
+            <h4 class="font-bold text-stone-900 text-sm">Eaton Fire Commemoration</h4>
+            <p class="text-xs text-stone-500 mb-1">Community reflection and department tribute</p>
+            <a href="https://www.coloradoboulevard.net/sierra-madre-fire-department-commemorates-eaton-fire-at-community-event/" target="_blank" rel="noopener" class="text-xs text-forest-700 font-semibold hover:underline inline-flex items-center gap-1">
+              Read News Feature <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+          </li>
+          <li class="border-l-2 border-stone-300 pl-4 py-1">
+            <h4 class="font-bold text-stone-900 text-sm">Community Chipper Days</h4>
+            <p class="text-xs text-stone-500">Bi-annual city curbside vegetation chipping operations</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES SECTION -->
+  <section id="resources" class="py-16 bg-stone-100 border-t border-stone-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold text-amberfire-600 uppercase tracking-widest block mb-2">Documentation & Media</span>
+        <h2 class="text-3xl font-extrabold text-forest-900 font-serif">Authoritative Resources</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <!-- Webinar Card -->
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-red-600 uppercase tracking-wider mb-2 block flex items-center gap-1">
+              <i data-lucide="youtube" class="w-4 h-4"></i> Recorded Webinar
+            </span>
+            <h4 class="font-bold text-stone-900 text-lg mb-2">CORE Fire Safe Foothills: Insurance & Firewise</h4>
+            <p class="text-stone-600 text-sm leading-relaxed mb-4">
+              Detailed community session discussing how local Firewise recognition coordinates with California FAIR plan discounts and insurance renewals.
+            </p>
+          </div>
+          <a href="https://youtu.be/YD4Ex6MrXCU" target="_blank" rel="noopener" class="text-xs font-bold text-forest-700 hover:text-forest-900 inline-flex items-center gap-1">
+            <span>Watch on YouTube</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Links Card -->
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm">
+          <span class="text-xs font-bold text-forest-700 uppercase tracking-wider mb-2 block flex items-center gap-1">
+            <i data-lucide="globe" class="w-4 h-4"></i> Official Portals
+          </span>
+          <h4 class="font-bold text-stone-900 text-lg mb-3">Key Wildfire Agencies</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="https://cafiresafecouncil.org" target="_blank" rel="noopener" class="text-stone-700 hover:text-forest-800 flex items-center justify-between border-b border-stone-100 py-1">
+                <span>California Fire Safe Council</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-stone-400"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.fire.ca.gov/" target="_blank" rel="noopener" class="text-stone-700 hover:text-forest-800 flex items-center justify-between border-b border-stone-100 py-1">
+                <span>CAL FIRE Headquarters</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-stone-400"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.nfpa.org/education-and-research/wildfire/firewise-usa" target="_blank" rel="noopener" class="text-stone-700 hover:text-forest-800 flex items-center justify-between border-b border-stone-100 py-1">
+                <span>NFPA Firewise USA® Recognition</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-stone-400"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.cafirefoundation.org/" target="_blank" rel="noopener" class="text-stone-700 hover:text-forest-800 flex items-center justify-between py-1">
+                <span>California Fire Foundation</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-stone-400"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONATE SECTION -->
+  <section id="donate" class="py-16 md:py-24 max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="bg-forest-900 text-stone-100 rounded-3xl p-8 sm:p-12 shadow-xl border border-forest-800 relative overflow-hidden">
+      <div class="relative z-10 text-center max-w-2xl mx-auto">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2">Support Our Foothills</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-serif mb-4">Tax-Deductible Contributions</h2>
+        <p class="text-stone-300 text-sm sm:text-base leading-relaxed mb-8">
+          Your generous donation is <strong>100% tax-deductible</strong> and directly funds community Chipper Days, home assessments, educational workshops, and local wildfire prevention infrastructure.
+        </p>
+
+        <!-- Mail Check Instructions Box -->
+        <div class="bg-forest-800/90 rounded-2xl p-6 border border-forest-700 text-left mb-6 shadow-inner">
+          <p class="text-xs uppercase font-bold text-amber-400 tracking-wider mb-2">Please make checks payable to:</p>
+          <p class="text-base sm:text-lg font-bold text-white font-mono leading-relaxed">
+            SIERRA MADRE FIRE SAFE COUNCIL CHARITABLE TRUST<br />
+            PO BOX 157<br />
+            SIERRA MADRE, CA 91025
+          </p>
+        </div>
+
+        <p class="text-xs text-stone-400 italic">
+          Online payment options via Venmo, PayPal, and Zelle are currently being established.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-stone-900 text-stone-400 text-sm py-12 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-stone-800">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded bg-forest-800 text-amber-400 flex items-center justify-center font-bold">
+            <i data-lucide="shield" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <p class="text-stone-200 font-bold tracking-tight">Sierra Madre Fire Safe Council</p>
+            <p class="text-xs text-stone-500">501(c)(3) Charitable Trust &bull; Sierra Madre, CA 91024 / 91025</p>
+          </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="flex items-center gap-4">
+          <a href="https://www.instagram.com/sierramadrefiresafe" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-stone-800 hover:bg-forest-800 text-stone-300 hover:text-white flex items-center justify-center transition" aria-label="Instagram">
+            <img src="images/instagram_2504918.png" alt="" class="w-4 h-4">
+          </a>
+          <a href="https://www.facebook.com/groups/sierramadrefiresafe" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-stone-800 hover:bg-forest-800 text-stone-300 hover:text-white flex items-center justify-center transition" aria-label="Facebook">
+            <img src="images/facebook_3938025.png" alt="" class="w-4 h-4">
+          </a>
+          <a href="mailto:info@sierramadrefiresafe.org" class="w-9 h-9 rounded-full bg-stone-800 hover:bg-forest-800 text-stone-300 hover:text-white flex items-center justify-center transition" aria-label="Email Us">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <p>&copy; 2026 Sierra Madre Fire Safe Council. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <button onclick="openModal('emergencyPlanModal')" class="hover:text-stone-200 transition">Emergency Plan</button>
+          <span>&bull;</span>
+          <button onclick="openModal('privacyModal')" class="hover:text-stone-200 transition">Privacy Policy</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL 1: EMERGENCY PLAN & GO-BAG (COMPLETE CHECKLIST FROM SUB-PAGE) -->
+  <div id="emergencyPlanModal" class="fixed inset-0 z-50 bg-stone-950/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl border border-stone-200 relative">
+      <button onclick="closeModal('emergencyPlanModal')" class="absolute top-5 right-5 text-stone-400 hover:text-stone-700 p-1" aria-label="Close modal">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <span class="text-xs font-bold text-amberfire-600 uppercase tracking-widest block mb-2">Emergency Planning Guide</span>
+      <h3 class="text-2xl font-bold text-forest-900 font-serif mb-4">Have an Emergency Plan &amp; Build a Kit</h3>
+
+      <div class="space-y-6 text-sm text-stone-700 leading-relaxed">
+        <div>
+          <h4 class="font-bold text-stone-900 text-base mb-2">Basic Protective Measures for All Hazards</h4>
+          <ul class="list-disc pl-5 space-y-1 text-stone-600">
+            <li>Physical safety is a concern for all hazards and may involve sheltering or immediate evacuating.</li>
+            <li>Develop a family communications and reuniting plan with designated emergency contacts.</li>
+            <li>Make an emergency supply kit to be prepared for all disaster categories.</li>
+            <li>Sign up to receive emergency alerts via cell phone and email.</li>
+            <li>Learn local evacuation routes, safety refuge areas, and warning alert protocols.</li>
+            <li>When recovering from a disaster, prioritize psychological well-being alongside structural recovery.</li>
+          </ul>
+        </div>
+
+        <div class="border-t border-stone-200 pt-4">
+          <h4 class="font-bold text-stone-900 text-base mb-2">7-Day Supply Kit Essentials</h4>
+          <p class="text-xs text-stone-500 mb-3">Pre-assemble these items in portable, durable packs before red flag conditions arise:</p>
+          <div class="grid sm:grid-cols-2 gap-2 text-xs text-stone-700">
+            <div class="bg-stone-50 p-2.5 rounded border border-stone-200">💧 Water: 1 gal/person/day for at least 7 days</div>
+            <div class="bg-stone-50 p-2.5 rounded border border-stone-200">🥫 Food: 7-day non-perishable supply & manual opener</div>
+            <div class="bg-stone-50 p-2.5 rounded border border-stone-200">📻 Battery/hand-crank & NOAA weather radio</div>
+            <div class="bg-stone-50 p-2.5 rounded border border-stone-200">🔦 Flashlight with abundant extra batteries</div>
+            <div class="bg-stone-50 p-2.5 rounded border border-stone-200">🩹 Comprehensive first aid kit & whistle</div>
+            <div class="bg-stone-50 p-2.5 rounded border border-stone-200">😷 Dust masks (N95) & plastic sheeting/duct tape</div>
+            <div class="bg-stone-50 p-2.5 rounded border border-stone-200">🧻 Moist towelettes & heavy-duty garbage bags</div>
+            <div class="bg-stone-50 p-2.5 rounded border border-stone-200">🔧 Wrench or pliers to safely turn off gas/utilities</div>
+            <div class="bg-stone-50 p-2.5 rounded border border-stone-200">🗺️ Physical local topographic/evacuation maps</div>
+            <div class="bg-stone-50 p-2.5 rounded border border-stone-200">🔋 Cell phone cords, power banks, or solar charger</div>
+          </div>
+        </div>
+
+        <div class="border-t border-stone-200 pt-4">
+          <h4 class="font-bold text-stone-900 text-base mb-2">Additional Critical Items to Add</h4>
+          <ul class="list-disc pl-5 space-y-1 text-stone-600 text-xs sm:text-sm">
+            <li>Prescription medications (at least 14 days) and spare eyeglasses.</li>
+            <li>Infant formula, bottles, and diapers.</li>
+            <li>Pet food, leash, extra water, and travel crate.</li>
+            <li>Copies of vital identification, deeds, and insurance policies in a waterproof container.</li>
+            <li>Cash in small denominations ($1, $5, $10, $20 bills).</li>
+            <li>Sleeping bag or warm wool blanket for each individual.</li>
+            <li>Sturdy change of clothing: long-sleeve cotton/wool, durable pants, work boots.</li>
+            <li>Household liquid chlorine bleach (plain, unscented) + dropper for disinfectant (9:1) or emergency water sanitization (16 drops per gallon).</li>
+            <li>Fire extinguisher and matches in waterproof case.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-stone-200 flex justify-end">
+        <button onclick="closeModal('emergencyPlanModal')" class="px-5 py-2 bg-stone-800 text-white text-xs font-semibold rounded-lg hover:bg-stone-900 transition">
+          Close Guide
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: PRIVACY POLICY (PRESERVED FROM SUB-PAGE) -->
+  <div id="privacyModal" class="fixed inset-0 z-50 bg-stone-950/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8 shadow-2xl border border-stone-200 relative">
+      <button onclick="closeModal('privacyModal')" class="absolute top-5 right-5 text-stone-400 hover:text-stone-700 p-1" aria-label="Close modal">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <h3 class="text-2xl font-bold text-forest-900 font-serif mb-4">Privacy Policy</h3>
+      <div class="space-y-4 text-xs sm:text-sm text-stone-600 leading-relaxed">
+        <p><strong>Who We Are:</strong> Our website address is <code>https://sierramadrefiresafe.org</code>.</p>
+        <p><strong>Data Collection &amp; Use:</strong> When visitors submit forms, event RSVPs, or communication queries, we collect the submitted contact details solely to deliver requested fire safety services, chipper notifications, and council announcements.</p>
+        <p><strong>Third-Party Services:</strong> We use reputable services (such as Google Forms for Block Captains and Chipper Days, YouTube for educational videos, and municipal alert links) which process data under their respective independent privacy standards.</p>
+        <p><strong>Contact:</strong> For privacy inquiries, contact <a href="mailto:info@sierramadrefiresafe.org" class="underline text-forest-700">info@sierramadrefiresafe.org</a>.</p>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-stone-200 flex justify-end">
+        <button onclick="closeModal('privacyModal')" class="px-5 py-2 bg-stone-800 text-white text-xs font-semibold rounded-lg hover:bg-stone-900 transition">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT FOR MODALS & MOBILE DRAWER -->
+  <script>
+    // Initialize Lucide SVG icons
+    lucide.createIcons();
+
+    // Mobile navigation toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when a navigation anchor is clicked
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Modal helpers
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    // Close modal on escape key press
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal('emergencyPlanModal');
+        closeModal('privacyModal');
+      }
+    });
+
+    // Close modal when backdrop is clicked
+    document.querySelectorAll('#emergencyPlanModal, #privacyModal').forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
