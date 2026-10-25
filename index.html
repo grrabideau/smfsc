@@ -101,6 +101,7 @@
 
           <a href="#get-involved" class="hover:text-forest-700 transition">Get Involved</a>
           <a href="#resources" class="hover:text-forest-700 transition">Resources</a>
+          <a href="#contact" class="hover:text-forest-700 transition">Contact</a>
           
           <a href="#donate" class="bg-amberfire-500 hover:bg-amberfire-600 text-white font-semibold px-4 py-2 rounded-full transition shadow-sm hover:shadow">
             Donate
@@ -139,6 +140,7 @@
       </div>
       <a href="#get-involved" class="mobile-link block text-base font-medium text-stone-800">Get Involved</a>
       <a href="#resources" class="mobile-link block text-base font-medium text-stone-800">Resources</a>
+      <a href="#contact" class="mobile-link block text-base font-medium text-stone-800">Contact</a>
       <a href="#donate" class="mobile-link block text-center bg-amberfire-500 text-white font-medium py-2.5 rounded-lg shadow-sm">Donate</a>
     </div>
   </header>
@@ -962,6 +964,53 @@
     </div>
   </section>
 
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-16 md:py-24 bg-stone-100 border-t border-stone-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <span class="text-xs font-bold text-amberfire-600 uppercase tracking-widest block mb-2">Get in Touch</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-forest-900 tracking-tight font-serif">Contact Us</h2>
+        <p class="mt-4 text-stone-600 text-base sm:text-lg">Questions, ideas, or want to get involved? Send us a message and we'll get back to you.</p>
+      </div>
+
+      <form action="https://formsubmit.co/info@sierramadrefiresafe.org" method="POST" class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-stone-200 space-y-5">
+        <!-- FormSubmit options -->
+        <input type="hidden" name="_subject" value="New message from the SMFSC website">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://grrabideau.github.io/smfsc/?sent=1#contact">
+        <!-- Honeypot for spam bots -->
+        <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
+
+        <div id="contactThanks" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-semibold">
+          Thank you! Your message has been sent.
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="contactName" class="block text-sm font-semibold text-stone-700 mb-1">Name</label>
+            <input id="contactName" type="text" name="name" required class="w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-forest-600">
+          </div>
+          <div>
+            <label for="contactEmail" class="block text-sm font-semibold text-stone-700 mb-1">Email</label>
+            <input id="contactEmail" type="email" name="email" required class="w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-forest-600">
+          </div>
+        </div>
+        <div>
+          <label for="contactSubject" class="block text-sm font-semibold text-stone-700 mb-1">Subject</label>
+          <input id="contactSubject" type="text" name="subject" class="w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-forest-600">
+        </div>
+        <div>
+          <label for="contactMessage" class="block text-sm font-semibold text-stone-700 mb-1">Message</label>
+          <textarea id="contactMessage" name="message" rows="5" required class="w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-forest-600"></textarea>
+        </div>
+        <button type="submit" class="inline-flex items-center gap-2 bg-forest-700 hover:bg-forest-800 text-white font-semibold px-6 py-3 rounded-lg transition shadow-sm">
+          <span>Send Message</span>
+          <i data-lucide="send" class="w-4 h-4"></i>
+        </button>
+      </form>
+    </div>
+  </section>
   <!-- FOOTER -->
   <footer class="bg-stone-900 text-stone-400 text-sm py-12 border-t border-stone-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1106,6 +1155,12 @@
         mobileMenu.classList.add('hidden');
       });
     });
+
+    // Show thank-you after contact form redirect
+    if (new URLSearchParams(location.search).get('sent') === '1') {
+      const t = document.getElementById('contactThanks');
+      if (t) t.classList.remove('hidden');
+    }
 
     // Modal helpers
     function openModal(modalId) {
